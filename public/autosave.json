@@ -1,0 +1,14 @@
+{
+  "STATUS": "Y",
+  "TIME": "3 февраля 2022 15:56",
+  "CONTROLS": [
+    {
+      "property": 4,
+      "fileId": "456"
+    },
+    {
+      "property": 5,
+      "fileId": "789"
+    }
+  ]
+}

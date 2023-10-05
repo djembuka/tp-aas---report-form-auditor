@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="<%= BASE_URL %>bootstrap.min.css" />
+    <link rel="stylesheet" href="<%= BASE_URL %>template_styles.css" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script src="<%= BASE_URL %>store.js"></script>
+    <script src="<%= BASE_URL %>velocity.min.js"></script>
+    <script src="<%= BASE_URL %>jquery-3.4.1.min.js"></script>
+    <script src="<%= BASE_URL %>bootstrap.min.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
+    </noscript>
+    <div id="reportFormApp"></div>
+    <div
+      class="modal--text modal fade"
+      id="submitConfirmModal"
+      tabindex="-1"
+      aria-labelledby="submitConfirmModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button
+            class="close"
+            type="button"
+            data-dismiss="modal"
+            aria-label="Close"
+            style="background-image: url('/template/images/cancel.svg')"
+          ></button>
+          <div class="modal-body">
+            <h3 class="text-center">Вы хотите отредактировать отчет?</h3>
+            <hr />
+            <p>
+              Вы переходите в режим редактирования отчета. После внесения
+              изменений в отчет вам необходимо сдать его, нажав на кнопку «Сдать
+              отчет».
+            </p>
+            <p>
+              До тех пор, пока вы повторно не отправите отчет, он будет
+              находиться в статусе «Необходимо сдать».
+            </p>
+            <hr />
+            <div class="text-center modal-buttons">
+              <button
+                class="btn btn-secondary btn-lg"
+                onclick="document.getElementById('reportFormAuditor').submit()"
+              >
+                Отправить
+              </button>
+              <button class="btn btn-light btn-lg" data-dismiss="modal">
+                Отменить
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
