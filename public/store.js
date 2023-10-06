@@ -1,599 +1,616 @@
 window.reportFormAuditorStore = {
-  url: {
-    getUsers: '/get-users.json',
-    getItemId: '/get-item-id.json',
-    autosave: '/autosave.json',
-  },
-  form: {
-    action: '',
-    method: 'POST',
-  },
-  hidden: [
-    {
-      name: 'FORM_ID',
-      value: 117129,
+    url: {
+      getUsers: '/get-users.json',
+      getItemId: '/get-item-id.json',
+      autosave: '/autosave.json',
     },
-    {
-      name: 'ID',
-      value: 122034,
+    form: {
+      action: '',
+      method: 'POST',
     },
-    {
-      name: 'sessid',
-      value: '51f0617bac2ab53f8e279f9885b1612f',
-    },
-  ],
-  blocks: [
-    {
-      id: 1,
-      title:
-        'Сведения об участии в осуществлении аудиторской деятельности (по каждому работодателю)',
-      type: 'collapse',
-      open: false,
-      controls: [
-        // {
-        //   type: 'rubles',
-        //   property: 1111,
-        //   word: 'RUBLES',
-        //   label: 'Затраты на оплату труда (тыс. руб.) *',
-        //   required: true,
-        //   tab: false,
-        //   bigLabel: false,
-        // },
-        {
-          type: 'multyblock',
-          property: 132,
-          word: 'PROPERTY',
-          template: false,
-          count: 99,
-          title: 'Место работы',
-          controls: [
-            {
-              type: 'text',
-              property: 133,
-              word: 'CHILD',
-              label:
-                'Наименование аудиторской организации/ФИО индивидуального аудитора *',
-              required: true,
-              tab: false,
-              bigLabel: false,
-            },
-            {
-              type: 'text',
-              property: 134,
-              word: 'CHILD',
-              label: 'ОРНЗ работодателя *',
-              required: true,
-              tab: false,
-              bigLabel: false,
-            },
-            {
-              type: 'select',
-              property: 135,
-              word: 'CHILD',
-              label: 'Основное место работы или совместительство *',
-              options: [
-                {
+    hidden: [
+      {
+        name: 'FORM_ID',
+        value: 117129,
+      },
+      {
+        name: 'ID',
+        value: 122034,
+      },
+      {
+        name: 'sessid',
+        value: '51f0617bac2ab53f8e279f9885b1612f',
+      },
+    ],
+    blocks: [
+      {
+        id: 1,
+        title:
+          'Сведения об участии в осуществлении аудиторской деятельности (по каждому работодателю)',
+        type: 'collapse',
+        open: false,
+        controls: [
+          // {
+          //   type: 'rubles',
+          //   property: 1111,
+          //   word: 'RUBLES',
+          //   label: 'Затраты на оплату труда (тыс. руб.) *',
+          //   required: true,
+          //   tab: false,
+          //   bigLabel: false,
+          // },
+          {
+            type: 'multyblock',
+            property: 132,
+            word: 'PROPERTY',
+            template: false,
+            count: 99,
+            title: 'Место работы',
+            controls: [
+              {
+                type: 'text',
+                property: 133,
+                word: 'CHILD',
+                label:
+                  'Наименование аудиторской организации/ФИО индивидуального аудитора *',
+                required: true,
+                tab: false,
+                bigLabel: false,
+              },
+              {
+                type: 'text',
+                property: 134,
+                word: 'CHILD',
+                label: 'ОРНЗ работодателя *',
+                required: true,
+                tab: false,
+                bigLabel: false,
+              },
+              {
+                type: 'select',
+                property: 135,
+                word: 'CHILD',
+                label: 'Основное место работы или совместительство *',
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'Основное',
+                    code: 'Основное',
+                  },
+                  {
+                    label: 'Совместительство',
+                    code: 'Совместительство',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: 'Основное',
-                  code: 'Основное',
-                },
-                {
-                  label: 'Совместительство',
-                  code: 'Совместительство',
-                },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                required: true,
+                tab: false,
+                bigLabel: false,
               },
-              required: true,
-              tab: false,
-              bigLabel: false,
-            },
-            {
-              type: 'select',
-              property: 146,
-              word: 'CHILD',
-              label: 'Участие в осуществлении аудиторской деятельности *',
-              options: [
-                {
+              {
+                type: 'select',
+                property: 146,
+                word: 'CHILD',
+                label: 'Участие в осуществлении аудиторской деятельности *',
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'да',
+                    code: 'да',
+                  },
+                  {
+                    label: 'нет',
+                    code: 'нет',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: 'да',
-                  code: 'да',
-                },
-                {
-                  label: 'нет',
-                  code: 'нет',
-                },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                required: true,
+                tab: false,
+                bigLabel: false,
               },
-              required: true,
-              tab: false,
-              bigLabel: false,
-            },
-            {
-              type: 'select',
-              property: 147,
-              word: 'CHILD',
-              label:
-                'Участие в осуществлении аудиторской деятельности в качестве руководителя аудита *',
-              options: [
-                {
+              {
+                type: 'select',
+                property: 147,
+                word: 'CHILD',
+                label:
+                  'Участие в осуществлении аудиторской деятельности в качестве руководителя аудита *',
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'да',
+                    code: 'да',
+                  },
+                  {
+                    label: 'нет',
+                    code: 'нет',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: 'да',
-                  code: 'да',
-                },
-                {
-                  label: 'нет',
-                  code: 'нет',
-                },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                required: true,
+                tab: false,
+                bigLabel: false,
               },
-              required: true,
-              tab: false,
-              bigLabel: false,
-            },
-            {
-              type: 'select',
-              property: 148,
-              word: 'CHILD',
-              label:
-                'при оказании аудиторских услуг общественно значимым организациям *',
-              options: [
-                {
+              {
+                type: 'select',
+                property: 148,
+                word: 'CHILD',
+                label:
+                  'при оказании аудиторских услуг общественно значимым организациям *',
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'да',
+                    code: 'да',
+                  },
+                  {
+                    label: 'нет',
+                    code: 'нет',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: 'да',
-                  code: 'да',
-                },
-                {
-                  label: 'нет',
-                  code: 'нет',
-                },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                required: true,
+                tab: 1,
+                bigLabel: false,
               },
-              required: true,
-              tab: 1,
-              bigLabel: false,
-            },
-            {
-              type: 'select',
-              property: 149,
-              word: 'CHILD',
-              label:
-                'при оказании аудиторских услуг общественно значимым организациям на финансовом рынке *',
-              options: [
-                {
+              {
+                type: 'select',
+                property: 149,
+                word: 'CHILD',
+                label:
+                  'при оказании аудиторских услуг общественно значимым организациям на финансовом рынке *',
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'да',
+                    code: 'да',
+                  },
+                  {
+                    label: 'нет',
+                    code: 'нет',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: 'да',
-                  code: 'да',
-                },
-                {
-                  label: 'нет',
-                  code: 'нет',
-                },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                required: true,
+                tab: 1,
+                bigLabel: false,
               },
-              required: true,
-              tab: 1,
-              bigLabel: false,
-            },
-            {
-              type: 'select',
-              property: 150,
-              word: 'CHILD',
-              label:
-                'при оказании аудиторских услуг организациям, ценные бумаги которых допущены к организованным торгам *',
-              options: [
-                {
+              {
+                type: 'select',
+                property: 150,
+                word: 'CHILD',
+                label:
+                  'при оказании аудиторских услуг организациям, ценные бумаги которых допущены к организованным торгам *',
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'да',
+                    code: 'да',
+                  },
+                  {
+                    label: 'нет',
+                    code: 'нет',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: 'да',
-                  code: 'да',
-                },
-                {
-                  label: 'нет',
-                  code: 'нет',
-                },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                required: true,
+                tab: 1,
+                bigLabel: false,
               },
-              required: true,
-              tab: 1,
-              bigLabel: false,
-            },
-            {
-              type: 'select',
-              property: 151,
-              word: 'CHILD',
-              label: 'при оказании аудиторских услуг кредитным организациям *',
-              options: [
-                {
+              {
+                type: 'select',
+                property: 151,
+                word: 'CHILD',
+                label: 'при оказании аудиторских услуг кредитным организациям *',
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'да',
+                    code: 'да',
+                  },
+                  {
+                    label: 'нет',
+                    code: 'нет',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: 'да',
-                  code: 'да',
-                },
-                {
-                  label: 'нет',
-                  code: 'нет',
-                },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                required: true,
+                tab: 1,
+                bigLabel: false,
               },
-              required: true,
-              tab: 1,
-              bigLabel: false,
-            },
-            {
-              type: 'select',
-              property: 152,
-              word: 'CHILD',
-              label: 'при оказании аудиторских услуг страховым организациям *',
-              options: [
-                {
+              {
+                type: 'select',
+                property: 152,
+                word: 'CHILD',
+                label: 'при оказании аудиторских услуг страховым организациям *',
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'да',
+                    code: 'да',
+                  },
+                  {
+                    label: 'нет',
+                    code: 'нет',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: 'да',
-                  code: 'да',
-                },
-                {
-                  label: 'нет',
-                  code: 'нет',
-                },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                required: true,
+                tab: 1,
+                bigLabel: false,
               },
-              required: true,
-              tab: 1,
-              bigLabel: false,
-            },
-            {
-              type: 'select',
-              property: 153,
-              word: 'CHILD',
-              label:
-                'при оказании аудиторских услуг профессиональным участникам рынка ценных бумаг *',
-              options: [
-                {
+              {
+                type: 'select',
+                property: 153,
+                word: 'CHILD',
+                label:
+                  'при оказании аудиторских услуг профессиональным участникам рынка ценных бумаг *',
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'да',
+                    code: 'да',
+                  },
+                  {
+                    label: 'нет',
+                    code: 'нет',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: 'да',
-                  code: 'да',
-                },
-                {
-                  label: 'нет',
-                  code: 'нет',
-                },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                required: true,
+                tab: 1,
+                bigLabel: false,
               },
-              required: true,
-              tab: 1,
-              bigLabel: false,
-            },
-            {
-              type: 'select',
-              property: 154,
-              word: 'CHILD',
-              label:
-                'Количество заданий по аудиту, в которых участвовал аудитор в качестве руководителя аудита (выбрать один из предложенных вариантов) *',
-              options: [
-                {
+              {
+                type: 'select',
+                property: 154,
+                word: 'CHILD',
+                label:
+                  'Количество заданий по аудиту, в которых участвовал аудитор в качестве руководителя аудита (выбрать один из предложенных вариантов) *',
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: '1-50',
+                    code: '1-50',
+                  },
+                  {
+                    label: '51-100',
+                    code: '51-100',
+                  },
+                  {
+                    label: '101-150',
+                    code: '101-150',
+                  },
+                  {
+                    label: 'Более 150',
+                    code: 'Более 150',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: '1-50',
-                  code: '1-50',
-                },
-                {
-                  label: '51-100',
-                  code: '51-100',
-                },
-                {
-                  label: '101-150',
-                  code: '101-150',
-                },
-                {
-                  label: 'Более 150',
-                  code: 'Более 150',
-                },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                required: true,
+                tab: false,
+                bigLabel: true,
               },
-              required: true,
-              tab: false,
-              bigLabel: true,
-            },
-          ],
-          items: [],
-        },
-      ],
-    },
-    {
-      id: 7,
-      type: 'collapse',
-      title: 'Место работы тест',
-      open: true,
-      controls: [
-        {
-          property: 23,
-          word: 'PROPERTY',
-          //sort: 10,
-          label: 'Тестовое поле вне блока *',
-          type: 'text',
-          required: true,
-          value: 'Value',
-          completeBlock: {
-            comment: 'текст',
-            title: 'click here',
-            value: 'Link',
+            ],
+            items: [],
           },
-        },
-        {
-          //sort: 20,
-          property: 26,
-          word: 'PROP',
-          type: 'multyblock',
-          template: 1,
-          count: 5,
-          title: 'Место работы',
-          controls: [
-            {
-              property: 24,
-              word: 'PROPERTY',
-              //sort: 10,
-              label: 'Наименование организации *',
-              type: 'text',
-              required: true,
+        ],
+      },
+      {
+        id: 7,
+        type: 'collapse',
+        title: 'Место работы тест',
+        open: true,
+        controls: [
+          {
+            property: 23,
+            word: 'PROPERTY',
+            //sort: 10,
+            label: 'Тестовое поле вне блока *',
+            type: 'text',
+            required: true,
+            value: 'Value',
+            completeBlock: {
+              comment: 'текст',
+              title: 'click here',
+              value: 'Link',
             },
-            {
-              property: 31,
-              word: 'PROPERTY',
-              //sort: 10,
-              label: 'ОРНЗ организации *',
-              type: 'ornz-strict',
-              required: true,
-              pattern: '^\\d{11}$',
-              count: 3,
-            },
-            {
-              property: 29,
-              word: 'PROPERTY',
-              //sort: 10,
-              label: 'Должность *',
-              type: 'text',
-              required: true,
-            },
-            {
-              property: 32,
-              word: 'PROPERTY',
-              //sort: 10,
-              label: 'Дата увольнения *',
-              type: 'text',
-              required: true,
-              value: '',
-            },
-            {
-              property: 25,
-              word: 'PROPERTY',
-              //sort: 20,
-              label: 'Характер труд.договора',
-              type: 'select',
-              required: false,
-              options: [
-                {
+          },
+          {
+            //sort: 20,
+            property: 26,
+            word: 'PROP',
+            type: 'multyblock',
+            template: 1,
+            count: 5,
+            title: 'Место работы',
+            controls: [
+              {
+                property: 24,
+                word: 'PROPERTY',
+                //sort: 10,
+                label: 'Наименование организации *',
+                type: 'text',
+                required: true,
+              },
+              // {
+              //     "type": "ornz-strict",
+              //     "property": 376,
+              //     "word": "CHILD",
+              //     "label": "ОРНЗ автозаполнение",
+              //     "required": false,
+              //     "value": "",
+              //     "pattern": "",
+              //     "tab": false,
+              //     "bigLabel": false,
+              //     "completeBlock": {
+              //         "title": "",
+              //         "value": "",
+              //         "comment": ""
+              //     },
+              //     "count": 3
+              // },
+              {
+                property: 31,
+                word: 'PROPERTY',
+                //sort: 10,
+                label: 'ОРНЗ организации *',
+                type: 'ornz-strict',
+                required: true,
+                pattern: '^\\d{11}$',
+                count: 3,
+              },
+              {
+                property: 29,
+                word: 'PROPERTY',
+                //sort: 10,
+                label: 'Должность *',
+                type: 'text',
+                required: true,
+              },
+              {
+                property: 32,
+                word: 'PROPERTY',
+                //sort: 10,
+                label: 'Дата увольнения *',
+                type: 'text',
+                required: true,
+                value: '',
+              },
+              {
+                property: 25,
+                word: 'PROPERTY',
+                //sort: 20,
+                label: 'Характер труд.договора',
+                type: 'select',
+                required: false,
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'Основной',
+                    code: '1',
+                  },
+                  {
+                    label: 'Дополнительный',
+                    code: '2',
+                  },
+                ],
+                selected: { label: 'Выберите', code: '' },
+              },
+              {
+                property: 26,
+                word: 'PROPERTY',
+                //sort: 30,
+                label:
+                  'Участие в аудиторских проверках (указать количество проверок) *',
+                type: 'text',
+                required: true,
+                completeBlock: {
+                  comment:
+                    'Укажите количество завершенных проверок (проверок, по которым выдано аудиторское заключение), в которых вы участвовали в течение отчетного года (целое число). Если Вы не участвовали в аудиторских проверках – укажите 0.',
+                },
+              },
+              {
+                property: 30,
+                word: 'PROPERTY',
+                //sort: 30,
+                label: 'Оказание прочих аудиторских услуг (указать виды услуг) *',
+                type: 'text',
+                required: true,
+                completeBlock: {
+                  comment:
+                    'Укажите название прочих услуг, например: постановка бух.учета, налоговое консультирование.',
+                },
+              },
+            ],
+            items: [
+              {
+                id: '123',
+                24: 'Какое-то значение',
+                31: '12345678978',
+                29: 'Какое-то значение',
+                32: '05.02.2015',
+                25: { label: 'Дополнительный', code: '2' },
+                26: 'Другое значение',
+                30: 'Аудит, проверки и прочее',
+              },
+              {
+                id: '124',
+                24: 'sdfsdf',
+                31: '',
+                29: '',
+                32: '',
+                25: { label: 'Выберите', code: '' },
+                26: '',
+                30: '',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 3,
+        title:
+          'Сведения об участии в осуществлении аудиторской деятельности (по каждому работодателю)',
+        type: 'collapse',
+        open: true,
+        controls: [
+          {
+            type: 'multyblock',
+            property: 132,
+            word: 'PROP',
+            count: 3,
+            title: 'Места работы',
+            controls: [
+              {
+                type: 'text',
+                property: 133,
+                label:
+                  'Наименование аудиторской организации/ФИО индивидуального аудитора *',
+                bigLabel: true,
+                required: true,
+              },
+              {
+                type: 'text',
+                property: 134,
+                word: 'HL',
+                label: 'ОРНЗ работодателя *',
+                required: true,
+              },
+              {
+                type: 'select',
+                tab: 1,
+                property: 135,
+                word: 'HL',
+                label: 'Основное место работы или совместительство *',
+                bigLabel: true,
+                options: [
+                  {
+                    label: 'Выберите',
+                    code: '',
+                  },
+                  {
+                    label: 'Основное',
+                    code: 'Основное',
+                  },
+                  {
+                    label: 'Совместительство',
+                    code: 'Совместительство',
+                  },
+                ],
+                selected: {
                   label: 'Выберите',
                   code: '',
                 },
-                {
-                  label: 'Основной',
-                  code: '1',
-                },
-                {
-                  label: 'Дополнительный',
-                  code: '2',
-                },
-              ],
-              selected: { label: 'Выберите', code: '' },
-            },
-            {
-              property: 26,
-              word: 'PROPERTY',
-              //sort: 30,
-              label:
-                'Участие в аудиторских проверках (указать количество проверок) *',
-              type: 'text',
-              required: true,
-              completeBlock: {
-                comment:
-                  'Укажите количество завершенных проверок (проверок, по которым выдано аудиторское заключение), в которых вы участвовали в течение отчетного года (целое число). Если Вы не участвовали в аудиторских проверках – укажите 0.',
+                required: true,
               },
-            },
-            {
-              property: 30,
-              word: 'PROPERTY',
-              //sort: 30,
-              label: 'Оказание прочих аудиторских услуг (указать виды услуг) *',
-              type: 'text',
-              required: true,
-              completeBlock: {
-                comment:
-                  'Укажите название прочих услуг, например: постановка бух.учета, налоговое консультирование.',
-              },
-            },
-          ],
-          items: [
-            {
-              id: '123',
-              24: 'Какое-то значение',
-              31: '12345678978',
-              29: 'Какое-то значение',
-              32: '05.02.2015',
-              25: { label: 'Дополнительный', code: '2' },
-              26: 'Другое значение',
-              30: 'Аудит, проверки и прочее',
-            },
-            {
-              id: '124',
-              24: 'sdfsdf',
-              31: '',
-              29: '',
-              32: '',
-              25: { label: 'Выберите', code: '' },
-              26: '',
-              30: '',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 3,
-      title:
-        'Сведения об участии в осуществлении аудиторской деятельности (по каждому работодателю)',
-      type: 'collapse',
-      open: true,
-      controls: [
-        {
-          type: 'multyblock',
-          property: 132,
-          word: 'PROP',
-          count: 3,
-          title: 'Места работы',
-          controls: [
-            {
-              type: 'text',
-              property: 133,
-              label:
-                'Наименование аудиторской организации/ФИО индивидуального аудитора *',
-              bigLabel: true,
-              required: true,
-            },
-            {
-              type: 'text',
-              property: 134,
-              word: 'HL',
-              label: 'ОРНЗ работодателя *',
-              required: true,
-            },
-            {
-              type: 'select',
-              tab: 1,
-              property: 135,
-              word: 'HL',
-              label: 'Основное место работы или совместительство *',
-              bigLabel: true,
-              options: [
-                {
-                  label: 'Выберите',
-                  code: '',
-                },
-                {
+            ],
+            items: [
+              {
+                133: 'ООО Тестовая',
+                134: '88888888888',
+                135: {
                   label: 'Основное',
                   code: 'Основное',
                 },
-                {
-                  label: 'Совместительство',
-                  code: 'Совместительство',
+                id: 123,
+              },
+              {
+                133: '',
+                134: '',
+                135: {
+                  label: 'Выберите',
+                  code: '',
                 },
-              ],
-              selected: {
-                label: 'Выберите',
-                code: '',
+                id: 87895,
               },
-              required: true,
-            },
-          ],
-          items: [
-            {
-              133: 'ООО Тестовая',
-              134: '88888888888',
-              135: {
-                label: 'Основное',
-                code: 'Основное',
-              },
-              id: 123,
-            },
-            {
-              133: '',
-              134: '',
-              135: {
-                label: 'Выберите',
-                code: '',
-              },
-              id: 87895,
-            },
-          ],
-        },
-      ],
+            ],
+          },
+        ],
+      },
+      {
+        id: 4,
+        controls: [
+          {
+            property: 1,
+            word: 'FORM_AGREEMENT',
+            label:
+              'Я принимаю <a href="/privacy/" target="_blank">условия Пользовательского соглашения</a> и даю своё согласие СРО ААС на обработку моей персональной информации на условиях, определенных Политикой конфиденциальности.',
+            required: true,
+            type: 'checkbox',
+            value: 'Y',
+            checked: true,
+            invalid: false,
+          },
+        ],
+      },
+    ],
+    submit: {
+      button: 'Отправить',
     },
-    {
-      id: 4,
-      controls: [
-        {
-          property: 1,
-          word: 'FORM_AGREEMENT',
-          label:
-            'Я принимаю <a href="/privacy/" target="_blank">условия Пользовательского соглашения</a> и даю своё согласие СРО ААС на обработку моей персональной информации на условиях, определенных Политикой конфиденциальности.',
-          required: true,
-          type: 'checkbox',
-          value: 'Y',
-          checked: true,
-          invalid: false,
-        },
-      ],
-    },
-  ],
-  submit: {
-    button: 'Отправить',
-  },
-};
+  };
 
 window.a = {
   url: {

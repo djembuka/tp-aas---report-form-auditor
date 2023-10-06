@@ -60,6 +60,7 @@ import AppControlNum from './AppControlNum.vue';
 import AppControlCheckbox from './AppControlCheckbox.vue';
 import AppControlSelect from './AppControlSelect.vue';
 import AppControlOrnz from './AppControlOrnz.vue';
+import AppControlOrnzStrict from './AppControlOrnzStrict.vue';
 
 export default {
   data() {
@@ -110,6 +111,7 @@ export default {
     AppControlCheckbox,
     AppControlSelect,
     AppControlOrnz,
+    AppControlOrnzStrict
   },
 };
 </script>
