@@ -39,6 +39,7 @@ import AppControlCheckbox from './AppControlCheckbox.vue';
 import AppControlSelect from './AppControlSelect.vue';
 import AppControlOrnz from './AppControlOrnz.vue';
 import AppControlOrnzStrict from './AppControlOrnzStrict.vue';
+import AppControlOrnzStrictAutocomplete from './AppControlOrnzStrictAutocomplete.vue';
 import AppControlBlockMulty from './AppControlBlockMulty.vue';
 import AppControlBlockMultyTemplate1 from './AppControlBlockMultyTemplate1.vue';
 
@@ -103,6 +104,7 @@ export default {
     AppControlSelect,
     AppControlOrnz,
     AppControlOrnzStrict,
+    AppControlOrnzStrictAutocomplete,
     AppControlBlockMulty,
     AppControlBlockMultyTemplate1,
   },

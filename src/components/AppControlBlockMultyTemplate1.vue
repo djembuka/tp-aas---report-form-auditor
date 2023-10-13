@@ -132,6 +132,7 @@ import AppControlCheckbox from './AppControlCheckbox.vue';
 import AppControlSelect from './AppControlSelect.vue';
 import AppControlOrnz from './AppControlOrnz.vue';
 import AppControlOrnzStrict from './AppControlOrnzStrict.vue';
+import AppControlOrnzStrictAutocomplete from './AppControlOrnzStrictAutocomplete.vue';
 
 export default {
   data() {
@@ -184,6 +185,7 @@ export default {
     AppControlSelect,
     AppControlOrnz,
     AppControlOrnzStrict,
+    AppControlOrnzStrictAutocomplete,
   },
 };
 </script>
