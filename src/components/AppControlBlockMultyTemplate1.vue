@@ -127,6 +127,7 @@
 
 <script>
 import AppControlText from './AppControlText.vue';
+import AppControlTextarea from './AppControlTextarea.vue';
 import AppControlNum from './AppControlNum.vue';
 import AppControlCheckbox from './AppControlCheckbox.vue';
 import AppControlSelect from './AppControlSelect.vue';
@@ -180,6 +181,7 @@ export default {
   },
   components: {
     AppControlText,
+    AppControlTextarea,
     AppControlNum,
     AppControlCheckbox,
     AppControlSelect,

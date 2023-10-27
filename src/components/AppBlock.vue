@@ -25,6 +25,7 @@
 
 <script>
 import AppControlText from './AppControlText.vue';
+import AppControlTextarea from './AppControlTextarea.vue';
 import AppControlRubles from './AppControlRubles.vue';
 import AppControlCheckbox from './AppControlCheckbox.vue';
 import AppControlSelect from './AppControlSelect.vue';
@@ -62,6 +63,7 @@ export default {
   },
   components: {
     AppControlText,
+    AppControlTextarea,
     AppControlRubles,
     AppControlCheckbox,
     AppControlSelect,
