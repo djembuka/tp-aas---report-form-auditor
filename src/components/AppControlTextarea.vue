@@ -39,7 +39,6 @@
             v-html="fc.label"
           ></label>
         </div>
-        {{ fc.value }}
       </div>
       <hr
         class="hr--xs d-block d-lg-none w-100"
