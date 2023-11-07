@@ -24,6 +24,25 @@ window.reportFormAuditorStore = {
   ],
   blocks: [
     {
+      id: 1000,
+      title: 'Тест поля типа search',
+      type: 'collapse',
+      open: true,
+      controls: [
+        {
+          property: 310,
+          word: 'PROPERTY',
+          label: 'Поиск по строке *',
+          type: 'search',
+          required: true,
+          pattern: '^\\d{11}$',
+          url: '/get-search.json',
+          count: 3,
+          value: '',
+        },
+      ],
+    },
+    {
       id: 1,
       title:
         'Сведения об участии в осуществлении аудиторской деятельности (по каждому работодателю)',
@@ -368,7 +387,7 @@ window.reportFormAuditorStore = {
       id: 7,
       type: 'collapse',
       title: 'Место работы тест',
-      open: true,
+      open: false,
       controls: [
         {
           property: 23,

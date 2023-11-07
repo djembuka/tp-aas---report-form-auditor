@@ -29,6 +29,7 @@ import AppControlTextarea from './AppControlTextarea.vue';
 import AppControlRubles from './AppControlRubles.vue';
 import AppControlCheckbox from './AppControlCheckbox.vue';
 import AppControlSelect from './AppControlSelect.vue';
+import AppControlSearch from './AppControlSearch.vue';
 import AppControlOrnz from './AppControlOrnz.vue';
 import AppControlOrnzStrict from './AppControlOrnzStrict.vue';
 import AppControlOrnzStrictAutocomplete from './AppControlOrnzStrictAutocomplete.vue';
@@ -67,6 +68,7 @@ export default {
     AppControlRubles,
     AppControlCheckbox,
     AppControlSelect,
+    AppControlSearch,
     AppControlOrnz,
     AppControlOrnzStrict,
     AppControlOrnzStrictAutocomplete,

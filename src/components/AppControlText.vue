@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="fc.render">
     <div class="row align-items-center">
       <div
         class="col-12"
@@ -202,6 +202,9 @@ export default {
         this.isInvalid = false;
       }
     },
+  },
+  mounted() {
+    this.fc.render = true;
   },
 };
 </script>

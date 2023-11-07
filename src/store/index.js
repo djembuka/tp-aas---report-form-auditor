@@ -194,6 +194,35 @@ export default new Vuex.Store({
       );
     },
 
+    setControlRender(state, payload) {
+      let control, item;
+      if (payload.multyProp) {
+        //form control in multyblock
+        item = state.blocks[payload.blockIndex].controls.find(
+          (control) => control.property === payload.multyProp
+        ).items[payload.itemIndex];
+
+        Vue.set(item, payload.property, payload.value);
+      } else {
+        //simple form control
+        control = state.blocks[payload.blockIndex].controls.find(
+          (control) => control.property === payload.property
+        );
+        //checkbox
+        if (control.type === 'checkbox') {
+          Vue.set(control, 'checked', payload.value);
+        }
+        //select
+        else if (control.type === 'select') {
+          Vue.set(control, 'selected', payload.value);
+        }
+        //simple text
+        else if (!control.multy) {
+          Vue.set(control, 'value', payload.value);
+        }
+      }
+    },
+
     setSavedTime(state, payload) {
       Vue.set(state, 'savedTime', payload);
     },
