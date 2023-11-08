@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :data-id="fc.property" @aasFormEvent="rerender">
     <div class="row align-items-center">
       <div
         class="col-12"
@@ -105,6 +105,10 @@ export default {
     },
   },
   methods: {
+    rerender() {
+      this.selectedOption = this.fc.selected;
+      this.onSelect();
+    },
     bitrixLogs(id, message) {
       //AJAX Bitrix
       if (window.BX) {
@@ -150,7 +154,7 @@ export default {
       //autosave
       this.$store.dispatch('autosave');
       this.resetAutosaveTimeoutId();
-      bitrixLogs(6, `${this.fc.label}:`);
+      this.bitrixLogs(6, `${this.fc.label}:`);
     },
     validate() {
       this.isInvalid =

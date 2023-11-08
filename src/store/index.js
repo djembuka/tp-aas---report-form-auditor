@@ -70,7 +70,7 @@ export default new Vuex.Store({
           return control.required ? control.checked : true;
         } else {
           if (control.required) {
-            return control.value.trim() !== ''
+            return control.value && control.value.trim() !== ''
               ? control.pattern
                 ? new RegExp(control.pattern, 'ig').test(control.value)
                   ? true
@@ -78,7 +78,7 @@ export default new Vuex.Store({
                 : true
               : false;
           } else {
-            return control.value.trim() === ''
+            return control.value && control.value.trim() === ''
               ? true
               : new RegExp(control.pattern, 'ig').test(control.value)
               ? true
@@ -162,23 +162,28 @@ export default new Vuex.Store({
         ).items[payload.itemIndex];
 
         Vue.set(item, payload.property, payload.value);
+
+        control = state.blocks[payload.blockIndex].controls
+          .find((control) => control.property === payload.multyProp)
+          .controls.find((control) => control.property === payload.property);
       } else {
         //simple form control
         control = state.blocks[payload.blockIndex].controls.find(
           (control) => control.property === payload.property
         );
-        //checkbox
-        if (control.type === 'checkbox') {
-          Vue.set(control, 'checked', payload.value);
-        }
-        //select
-        else if (control.type === 'select') {
-          Vue.set(control, 'selected', payload.value);
-        }
-        //simple text
-        else if (!control.multy) {
-          Vue.set(control, 'value', payload.value);
-        }
+      }
+
+      //checkbox
+      if (control && control.type === 'checkbox') {
+        Vue.set(control, 'checked', payload.value);
+      }
+      //select
+      else if (control && control.type === 'select') {
+        Vue.set(control, 'selected', payload.value);
+      }
+      //simple text, textarea
+      else if (control) {
+        Vue.set(control, 'value', payload.value);
       }
     },
 
@@ -192,35 +197,6 @@ export default new Vuex.Store({
         }`,
         !payload.isInvalid
       );
-    },
-
-    setControlRender(state, payload) {
-      let control, item;
-      if (payload.multyProp) {
-        //form control in multyblock
-        item = state.blocks[payload.blockIndex].controls.find(
-          (control) => control.property === payload.multyProp
-        ).items[payload.itemIndex];
-
-        Vue.set(item, payload.property, payload.value);
-      } else {
-        //simple form control
-        control = state.blocks[payload.blockIndex].controls.find(
-          (control) => control.property === payload.property
-        );
-        //checkbox
-        if (control.type === 'checkbox') {
-          Vue.set(control, 'checked', payload.value);
-        }
-        //select
-        else if (control.type === 'select') {
-          Vue.set(control, 'selected', payload.value);
-        }
-        //simple text
-        else if (!control.multy) {
-          Vue.set(control, 'value', payload.value);
-        }
-      }
     },
 
     setSavedTime(state, payload) {

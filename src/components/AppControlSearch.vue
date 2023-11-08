@@ -308,21 +308,58 @@ export default {
 
       //autocomplete
       if (this.activeUser.autocomplete) {
-        this.activeUser.autocomplete.forEach((c) => {
-          this.$store.state.blocks.forEach((block, blockIndex) => {
-            const a = block.controls.find(
-              (control) => String(control.property) === String(c.property)
+        if (this.multyProp) {
+          this.activeUser.autocomplete.forEach((c) => {
+            const mb = this.$store.state.blocks[this.blockIndex].controls.find(
+              (m) => m.property === this.multyProp
             );
-            if (a) {
-              this.$store.commit('setControlValue', {
-                blockIndex: blockIndex,
-                property: c.property,
-                value: c.value,
-              });
+
+            if (mb) {
+              const control = mb.controls.find(
+                (con) => String(con.property) === String(c.property)
+              );
+              if (control) {
+                this.$store.commit('setControlValue', {
+                  blockIndex: this.blockIndex,
+                  multyProp: this.multyProp,
+                  itemIndex: this.itemIndex,
+                  property: c.property,
+                  value: c.value,
+                });
+                const input = this.$refs.input
+                  .closest('.b-add-fieldset-block__wrapper')
+                  .querySelector(`[data-id="${c.property}"]`);
+                if (input) {
+                  input.dispatchEvent(new CustomEvent('aasFormEvent'));
+                }
+              }
             }
-            return a;
           });
-        });
+        } else {
+          this.activeUser.autocomplete.forEach((c) => {
+            this.$store.state.blocks.forEach((block, blockIndex) => {
+              const a = block.controls.find(
+                (control) => String(control.property) === String(c.property)
+              );
+              if (a) {
+                this.$store.commit('setControlValue', {
+                  blockIndex: blockIndex,
+                  property: c.property,
+                  value: c.value,
+                });
+                setTimeout(() => {
+                  console.log('setTimeout');
+                  const input = document.querySelector(
+                    `[data-id="${c.property}"]`
+                  );
+                  if (input) {
+                    input.dispatchEvent(new CustomEvent('aasFormEvent'));
+                  }
+                }, 1000);
+              }
+            });
+          });
+        }
       }
     },
     enterControl() {

@@ -14,12 +14,43 @@
     "some-prop": "any",
     "autocomplete": [
       {
-        "property": 23,
-        "value": "Some value"
+        "property": 1030,
+        "value": "Textarea value"
       },
       {
-        "property": 22,
-        "value": "Another value"
+        "property": 1330,
+        "value": "Text value"
+      },
+      {
+        "property": 103,
+        "value": "Textarea value"
+      },
+      {
+        "property": 133,
+        "value": "Text value"
+      },
+      {
+        "property": 134,
+        "value": "Text value"
+      },
+      {
+        "property": 135,
+        "value": {
+          "label": "Основное",
+          "code": "Основное"
+        }
+      },
+      {
+        "property": 1111,
+        "checked": false
+      },
+      {
+        "property": 1132,
+        "value": "12345645644"
+      },
+      {
+        "property": 1131,
+        "value": "78979878978"
       }
     ]
   },

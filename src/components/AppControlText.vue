@@ -1,5 +1,5 @@
 <template>
-  <div v-if="fc.render">
+  <div :data-id="fc.property" @aasFormEvent="rerender">
     <div class="row align-items-center">
       <div
         class="col-12"
@@ -92,7 +92,7 @@ export default {
   data() {
     return {
       controlValue: this.fc.value,
-      isActive: this.fc.value === '' ? false : true,
+      isActive: !!this.fc.value,
       isInvalid: undefined,
     };
   },
@@ -134,6 +134,11 @@ export default {
     },
   },
   methods: {
+    rerender() {
+      this.controlValue = this.fc.value;
+      this.isActive = !!this.fc.value;
+      this.inputControl();
+    },
     bitrixLogs(id, message) {
       //AJAX Bitrix
       if (window.BX) {
@@ -202,9 +207,6 @@ export default {
         this.isInvalid = false;
       }
     },
-  },
-  mounted() {
-    this.fc.render = true;
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :data-id="fc.property" @aasFormEvent="rerender">
     <div class="b-checkbox" :class="{ invalid: isInvalid }">
       <label>
         <input
@@ -66,6 +66,9 @@ export default {
     },
   },
   methods: {
+    rerender() {
+      this.checked = this.fc.checked;
+    },
     bitrixLogs(id, message) {
       //AJAX Bitrix
       if (window.BX) {
