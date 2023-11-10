@@ -1,5 +1,6 @@
 <template>
   <div class="b-add-fieldset-block">
+    {{ multy.items }}
     <transition-group name="list" tag="div">
       <div
         class="b-add-fieldset-block__item"
