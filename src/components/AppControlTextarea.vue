@@ -134,9 +134,18 @@ export default {
   },
   methods: {
     rerender() {
-      console.log(this.fc.value);
-      this.controlValue = this.fc.value;
-      this.isActive = !!this.fc.value;
+      if (this.multyProp) {
+        const multy = this.$store.state.blocks[this.blockIndex].controls.find(
+          (m) => m.property === this.multyProp
+        );
+        const items = multy.items;
+        const value = items[this.itemIndex][String(this.fc.property)];
+
+        this.controlValue = value;
+      } else {
+        this.controlValue = this.fc.value;
+      }
+      this.isActive = !!this.controlValue;
       this.inputControl();
     },
     bitrixLogs(id, message) {

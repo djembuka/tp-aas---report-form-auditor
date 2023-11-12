@@ -106,7 +106,17 @@ export default {
   },
   methods: {
     rerender() {
-      this.selectedOption = this.fc.selected;
+      if (this.multyProp) {
+        const multy = this.$store.state.blocks[this.blockIndex].controls.find(
+          (m) => m.property === this.multyProp
+        );
+        const items = multy.items;
+        const value = items[this.itemIndex][String(this.fc.property)];
+
+        this.selectedOption = value;
+      } else {
+        this.selectedOption = this.fc.selected;
+      }
       this.onSelect();
     },
     bitrixLogs(id, message) {

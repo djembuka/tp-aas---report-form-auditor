@@ -67,7 +67,17 @@ export default {
   },
   methods: {
     rerender() {
-      this.checked = this.fc.checked;
+      if (this.multyProp) {
+        const multy = this.$store.state.blocks[this.blockIndex].controls.find(
+          (m) => m.property === this.multyProp
+        );
+        const items = multy.items;
+        const value = items[this.itemIndex][String(this.fc.property)];
+
+        this.checked = value;
+      } else {
+        this.checked = this.fc.checked;
+      }
     },
     bitrixLogs(id, message) {
       //AJAX Bitrix

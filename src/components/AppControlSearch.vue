@@ -227,11 +227,15 @@ export default {
 
       if (this.controlValue.length >= this.count) {
         (async () => {
-          let response = await fetch(`${this.fc.url}?s=${this.controlValue}`, {
-            headers: {
-              Authentication: 'secret',
-            },
-          });
+          const amp = String(this.fc.url).search(/\?/) === -1 ? '?' : '&';
+          let response = await fetch(
+            `${this.fc.url}${amp}s=${this.controlValue}`,
+            {
+              headers: {
+                Authentication: 'secret',
+              },
+            }
+          );
           let result = await response.json();
 
           //change active hint array
