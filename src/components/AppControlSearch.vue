@@ -131,7 +131,7 @@ export default {
     return {
       controlValue: this.fc.value,
       memoryValue: this.fc.value,
-      isActive: this.fc.value === '' ? false : true,
+      isActive: !!this.fc.value,
       isInvalid: undefined,
       count: this.fc.count || 1,
       //hints
@@ -144,7 +144,7 @@ export default {
   props: ['fc', 'blockIndex', 'multyProp', 'multyWord', 'itemIndex'],
   computed: {
     isClearable() {
-      return this.controlValue !== '' && this.hover ? true : false;
+      return !!(this.controlValue !== '' && this.hover);
     },
     id() {
       return this.multyWord !== undefined
@@ -239,7 +239,9 @@ export default {
           let result = await response.json();
 
           //change active hint array
-          this.activeHint = result.map(() => null);
+          if (typeof result === 'object') {
+            this.activeHint = result.map(() => null);
+          }
 
           //this.$store.commit( 'changeUsers', result );
           this.users = result;
@@ -249,13 +251,6 @@ export default {
       }
       //restart autosave
       this.resetAutosaveTimeoutId();
-    },
-    focusControl() {
-      if (
-        this.$refs.input.closest('.b-float-label').className.includes('invalid')
-      ) {
-        this.isInvalid = true;
-      }
     },
     upArrow() {
       let activeIndex = this.activeHint.indexOf(true);
@@ -289,12 +284,19 @@ export default {
       this.activeUser =
         this.users.find((user) => user.ORNZ === this.controlValue) || {};
     },
+    focusControl() {
+      if (
+        this.$refs.input.closest('.b-float-label').className.includes('invalid')
+      ) {
+        this.isInvalid = true;
+      }
+    },
     blurControl() {
       this.fc.value = this.memoryValue;
       this.controlValue = this.memoryValue;
       //clear hint
       setTimeout(() => {
-        this.isActive = this.controlValue !== '' ? true : false;
+        this.isActive = !!this.controlValue;
         this.validateControl();
         this.users = [];
       }, 200);
@@ -352,7 +354,6 @@ export default {
                   value: c.value,
                 });
                 setTimeout(() => {
-                  console.log('setTimeout');
                   const input = document.querySelector(
                     `[data-id="${c.property}"]`
                   );
