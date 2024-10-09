@@ -42,6 +42,7 @@ import AppControlSearch from './AppControlSearch.vue';
 import AppControlOrnz from './AppControlOrnz.vue';
 import AppControlOrnzStrict from './AppControlOrnzStrict.vue';
 import AppControlOrnzStrictAutocomplete from './AppControlOrnzStrictAutocomplete.vue';
+import AppControlOrnzStrictAutocompleteExcluded from './AppControlOrnzStrictAutocompleteExcluded.vue';
 import AppControlBlockMulty from './AppControlBlockMulty.vue';
 import AppControlBlockMultyTemplate1 from './AppControlBlockMultyTemplate1.vue';
 
@@ -109,6 +110,7 @@ export default {
     AppControlOrnz,
     AppControlOrnzStrict,
     AppControlOrnzStrictAutocomplete,
+    AppControlOrnzStrictAutocompleteExcluded,
     AppControlBlockMulty,
     AppControlBlockMultyTemplate1,
   },
